@@ -17,7 +17,7 @@ Here are some ideas to get you started:
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=vijayanandrp&langs_count=8)](https://github.com/vijayanandrp/blog)
 
 -->
-Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif)My name is Vijay Anand Pandian
+<!-- Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif)My name is Vijay Anand Pandian -->
 ===========================================================================================================================================
 
 * 🌍  I'm based in London, United Kingdom
@@ -49,7 +49,7 @@ Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-912
 
 <a href="http://www.github.com/vijayanandrp"><img src="https://github-readme-streak-stats.herokuapp.com/?user=vijayanandrp&stroke=ffffff&background=1c1917&ring=ef4444&fire=ef4444&currStreakNum=ffffff&currStreakLabel=ef4444&sideNums=ffffff&sideLabels=ffffff&dates=ffffff&hide_border=true" /></a>
 
-<a href="https://github.com/vijayanandrp" align="left"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vijayanandrp&langs_count=10&title_color=ef4444&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&locale=en&custom_title=Top%20%Languages" alt="Top Languages" /></a>
+<!-- <a href="https://github.com/vijayanandrp" align="left"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vijayanandrp&langs_count=10&title_color=ef4444&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&locale=en&custom_title=Top%20%Languages" alt="Top Languages" /></a> -->
 
 
 [![Vijay's GitHub stats](https://github-readme-stats.vercel.app/api?username=vijayanandrp&show_icons=true&theme=radical)](https://github.com/vijayanandrp/blog)
