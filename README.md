@@ -46,8 +46,8 @@ Here are some ideas to get you started:
 
 <b>My GitHub Stats</b>
 
-[![Vijay's GitHub stats](https://github-readme-stats.vercel.app/api?username=vijayanandrp&show_icons=true&theme=radical)](https://github.com/vijayanandrp/blog)
-
+<!-- [![Vijay's GitHub stats](https://github-readme-stats.vercel.app/api?username=vijayanandrp&show_icons=true&theme=radical)](https://github.com/vijayanandrp/blog)
+ -->
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=vijayanandrp&layout=compact)](https://github.com/vijayanandrp/blog)
 
