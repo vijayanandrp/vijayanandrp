@@ -46,12 +46,9 @@ Here are some ideas to get you started:
 
 <b>My GitHub Stats</b>
 
-<!-- [![Vijay's GitHub stats](https://github-readme-stats.vercel.app/api?username=vijayanandrp&show_icons=true&theme=radical)](https://github.com/vijayanandrp/blog)
- -->
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=vijayanandrp&layout=compact)](https://github.com/vijayanandrp/blog)
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=vijayanandrp&label=Profile%20views&color=0e75b6&style=flat" alt="vijayanandrp" /> </p>
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=vijayanandrp" alt="vijayanandrp" /></a> </p>
 
@@ -63,3 +60,4 @@ Here are some ideas to get you started:
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=vijayanandrp&" alt="vijayanandrp" /></p>
 
 
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=vijayanandrp&label=Profile%20views&color=0e75b6&style=flat" alt="vijayanandrp" /> </p>
