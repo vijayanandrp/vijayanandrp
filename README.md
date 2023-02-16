@@ -19,6 +19,7 @@ Here are some ideas to get you started:
 -->
 <!-- Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif)My name is Vijay Anand Pandian -->
 
+- 👨‍💻 All of my projects are available at [https://github.com/vijayanandrp?tab=repositories](https://github.com/vijayanandrp?tab=repositories)
 
 * 🌍  I'm based in London, United Kingdom
 * 🖥️  See my portfolio at [My Portfolio](http://vijayanandrp.com)
@@ -45,24 +46,15 @@ Here are some ideas to get you started:
 
 <b>My GitHub Stats</b>
 
-<!-- <a href="http://www.github.com/vijayanandrp"><img src="https://github-readme-stats.vercel.app/api?username=vijayanandrp&show_icons=true&hide=&count_private=true&title_color=ef4444&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true" alt="vijayanandrp's GitHub stats" /></a>
-
-<a href="http://www.github.com/vijayanandrp"><img src="https://github-readme-streak-stats.herokuapp.com/?user=vijayanandrp&stroke=ffffff&background=1c1917&ring=ef4444&fire=ef4444&currStreakNum=ffffff&currStreakLabel=ef4444&sideNums=ffffff&sideLabels=ffffff&dates=ffffff&hide_border=true" /></a> -->
-
-<!-- <a href="https://github.com/vijayanandrp" align="left"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vijayanandrp&langs_count=10&title_color=ef4444&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&locale=en&custom_title=Top%20%Languages" alt="Top Languages" /></a> -->
-
 [![Vijay's GitHub stats](https://github-readme-stats.vercel.app/api?username=vijayanandrp&show_icons=true&theme=radical)](https://github.com/vijayanandrp/blog)
 
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=vijayanandrp&layout=compact)](https://github.com/vijayanandrp/blog)
 
-
-
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=vijayanandrp&label=Profile%20views&color=0e75b6&style=flat" alt="vijayanandrp" /> </p>
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=vijayanandrp" alt="vijayanandrp" /></a> </p>
 
-- 👨‍💻 All of my projects are available at [https://github.com/vijayanandrp?tab=repositories](https://github.com/vijayanandrp?tab=repositories)
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=vijayanandrp&show_icons=true&locale=en&layout=compact" alt="vijayanandrp" /></p>
 
