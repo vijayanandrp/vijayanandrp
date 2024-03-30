@@ -92,8 +92,16 @@ We can conclude that, in fact, processing cores and CPUs are not the same things
 
 ![image](https://github.com/vijayanandrp/blog/assets/3804538/45d6be94-c40f-4b29-b28d-4b6f83a3c589)
 
+### Process states
 
 ![image](https://github.com/vijayanandrp/blog/assets/3804538/2657b2b2-7e5d-4b2e-819e-120d9feb0874)
+
+An operating system kernel that allows multitasking needs processes to have certain states. Names for these states are not standardised, but they have similar functionality.
+
+  - First, the process is **"created"** by being loaded from a secondary storage device (hard disk drive, CD-ROM, etc.) into main memory. After that the process scheduler assigns it the **"waiting"** state.
+  - While the process is **"waiting"**, it waits for the scheduler to do a so-called *context switch*. The *context switch* loads the process into the processor and changes the state to **"running"** while the previously **"running"** process is stored in a **"waiting"** state.
+  - If a process in the **"running"** state needs to wait for a resource (wait for user input or file to open, for example), it is assigned the **"blocked"** state. The process state is changed back to **"waiting"** when the process no longer needs to wait (in a blocked state).
+  - Once the process finishes execution, or is terminated by the operating system, it is no longer needed. The process is removed instantly or is moved to the **"terminated"** state. When removed, it just waits to be removed from main memory.
 
 ![image](https://github.com/vijayanandrp/vijayanandrp/assets/3804538/ba55cb2e-1835-4b3c-a5ee-109df92b55e0)
 
