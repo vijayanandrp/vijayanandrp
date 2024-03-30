@@ -1,4 +1,5 @@
 
+
 Scale up Messaging Queue with Python Celery (Processes vs Threads) — Part 1
 ===========================================================================
 
@@ -332,3 +333,8 @@ This more refactored code took
 *   **2 minutes to scrape 2100 web pages while celery was up with 1000 threads pool.**
 
 Here the worker master process just get the list of URLs and trigger a task for saving meta and saving to S3 with desired URL. Each task is responsible for getting its web page data from its provided web page url
+
+
+## Thanks
+1. https://medium.com/@iamlal/handling-i-o-bound-tasks-with-python-celery-using-processes-vs-threads-pool-126a4875600d
+2. https://medium.com/@iamlal/scale-up-messaging-queue-with-python-celery-processes-vs-threads-402533be269e
