@@ -35,7 +35,7 @@ How many child processes a worker process is allowed to spin up, depends on the 
 ```
 celery -A project worker
 ```
-![](https://miro.medium.com/v2/resize:fit:1260/0*JbH57vvmg61XDapW)
+![image](https://github.com/vijayanandrp/vijayanandrp/assets/3804538/68cb582d-2903-457c-adb5-79f2e4b3d978)
 
 This is the default. You can see the list of processes ran by celery
 
@@ -43,20 +43,20 @@ If you want to keep 4 processes open any time. You can try this
 ```
 celery -A project worker –concurrency=4
 ```
-![](https://miro.medium.com/v2/resize:fit:1260/0*iBljxXRgF0ewSqyz)
+![image](https://github.com/vijayanandrp/vijayanandrp/assets/3804538/9ae53f92-3b6d-47b6-94f7-ece033948632)
 
 Or if you want 20 or 2000
 ```
 celery -A project worker –concurrency=20
 ```
-![](https://miro.medium.com/v2/resize:fit:1260/0*3rXxjPD9QqpFZqWG)
+![image](https://github.com/vijayanandrp/vijayanandrp/assets/3804538/02173819-29ba-442a-8e9e-bfab4869578a)
 
 **Isn’t it resource wasting? Or useless to keep up 4 or 8 or 2000 processes even not needed at all?**  
 Yes. You can configure celery worker to auto scale based on the number of tasks the worker should pick from the broker.
 ```
 celery -A project worker –autoscale=8,1
 ```
-![](https://miro.medium.com/v2/resize:fit:1260/0*hAX4INtUFwP_b0ST)
+![image](https://github.com/vijayanandrp/vijayanandrp/assets/3804538/7285ebc3-0cb8-4a89-ab08-0e76abf2da4a)
 
 Now celery worker will just keep one process alive (other than worker master process) and then as the worker gets more tasks from the queue, it will spin up more processes until the limit 8 is reached.
 
@@ -86,7 +86,7 @@ Ahhh.. you kidding me? It’s just illusion-ed like we are handling 100 processe
 
 **YES. Bruh**
 
-![](https://miro.medium.com/v2/resize:fit:130/0*oVLILVgLeH_VSFr2)
+![image](https://github.com/vijayanandrp/vijayanandrp/assets/3804538/da69f5d3-d516-4219-988c-68ded446b4c5)
 
 **NO man. What if I have CPU intensive tasks, continuously using a core of CPU?**
 
