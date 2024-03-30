@@ -215,7 +215,7 @@ This is the process pool running for our current web scraping with a default con
 celery -A project worker --concurrency=8
 ```
 
-![](https://miro.medium.com/v2/resize:fit:1260/0*7Jqn1xJ4sxDgxwTL)
+![image](https://github.com/vijayanandrp/vijayanandrp/assets/3804538/40313ec4-5ee3-4fce-bc40-8f2c379e3bb9)
 
 You can see, most of the processes are sleeping except the master worker process and 1 child process handling all of the load for scraping. There is just 1 process doing all stuff as we are getting all web pages using a loop inside a single task. So single task will be handled by a single process if we trigger that task just once.
 
