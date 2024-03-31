@@ -102,7 +102,7 @@ There are two options for creating a Thread in Java. Each thread is created in J
 *   **Option 1**: You can create a class that inherits the Thread.java class.
 *   **Option 2**: You can use a Runnable object.
 
-In my option, you should use a Runnable object to creating a Thread. It’s very flexible. We also can _pause_ a Thread via _sleep() method_ and _waiting_ for the completion of another thread via the _join() method_. Thread has three priorities: Thread._MIN\_PRIORITY (1),_ Thread._NORM\_PRIORITY(5),_ Thread._MAX\_PRIORITY(10)._ The default thread has priority: Thread.NORM\_PRIORITY.
+In my option, you should use a Runnable object to creating a Thread. It’s very flexible. We also can _pause_ a Thread via _sleep() method_ and _waiting_ for the completion of another thread via the _join() method_. Thread has three priorities: Thread._MIN_PRIORITY (1),_ Thread._NORM_PRIORITY(5),_ Thread._MAX_PRIORITY(10)._ The default thread has priority: Thread.NORM_PRIORITY.
 
 To create and manage Thread in Java you can use the Executors framework. Java Concurrency API defines three executor interfaces that cover everything that is needed for creating and managing threads:
 
@@ -212,24 +212,25 @@ Choosing the right concurrency model for your Python program depends on the spec
 
 Here is an example code to understand multithreading in Python:
 
+```python
 import threading 
 
-def print\_cube(num):
+def print_cube(num):
   """
   Function to print cube of given num
   """
-  print("Cube: {}".format(num \* num \* num))
+  print("Cube: {}".format(num * num * num))
 
-def print\_square(num):
+def print_square(num):
   """
   Function to print square of given num
   """
-  print("Square: {}".format(num \* num))
+  print("Square: {}".format(num * num))
 
-if \_\_name\_\_ == "\_\_main\_\_":
+if __name__ == "__main__":
     # creating thread
-    t1 = threading.Thread(target=print\_square, args=(10,))  
-    t2 = threading.Thread(target=print\_cube, args=(10,))
+    t1 = threading.Thread(target=print_square, args=(10,))  
+    t2 = threading.Thread(target=print_cube, args=(10,))
 
     # starting thread 1
     t1.start()
@@ -242,8 +243,8 @@ if \_\_name\_\_ == "\_\_main\_\_":
     t2.join()
 
     print("Done!") 
-
-In the above code, we create two threads t1 and t2. t1 calls print\_square() function while t2 calls print\_cube().
+```
+In the above code, we create two threads t1 and t2. t1 calls print_square() function while t2 calls print_cube().
 
 We start both the threads using start() method. join() ensures that the main thread waits for these threads to complete before terminating.
 
@@ -260,25 +261,25 @@ However, multithreading also comes with challenges like race conditions, deadloc
 ![](https://media.licdn.com/dms/image/D5612AQFkBulX7E_DSg/article-inline_image-shrink_1500_2232/0/1700328329265?e=1717027200&v=beta&t=phK2rmdbpM51588-seg3l4aYEP_cZGUgf-Slf4zGT9U)
 
 Here is an example:
-
+```python
 import multiprocessing 
 
-def print\_cube(num):
+def print_cube(num):
   """
   Function to print cube of given num
   """
-  print("Cube: {}".format(num \* num \* num))
+  print("Cube: {}".format(num * num * num))
 
-def print\_square(num):
+def print_square(num):
   """
   Function to print square of given num
   """
-  print("Square: {}".format(num \* num))
+  print("Square: {}".format(num * num))
 
-if \_\_name\_\_ == "\_\_main\_\_":
+if __name__ == "__main__":
     # creating process
-    p1 = multiprocessing.Process(target=print\_square, args=(10,))
-    p2 = multiprocessing.Process(target=print\_cube, args=(10,))
+    p1 = multiprocessing.Process(target=print_square, args=(10,))
+    p2 = multiprocessing.Process(target=print_cube, args=(10,))
 
     # starting process 1
     p1.start()
@@ -291,8 +292,8 @@ if \_\_name\_\_ == "\_\_main\_\_":
     p2.join()
 
     print("Done!") 
-
-Here, we create two processes p1 and p2 to execute the print\_square() and print\_cube() functions concurrently.
+```
+Here, we create two processes p1 and p2 to execute the print_square() and print_cube() functions concurrently.
 
 The main difference between multithreading and multiprocessing is that threads run within a single process while processes run independently in separate memory spaces.
 
@@ -305,24 +306,24 @@ Multiprocessing avoids GIL limitations and allows full utilization of multicore 
 Asyncio provides a single-threaded, non-blocking concurrency model in Python. It uses cooperative multitasking and an event loop to execute coroutines concurrently.
 
 Here is a simple asyncio example:
-
+```python
 import asyncio
 
-async def print\_square(num):
-  print("Square: {}".format(num \* num))
+async def print_square(num):
+  print("Square: {}".format(num * num))
 
-async def print\_cube(num):
-  print("Cube: {}".format(num \* num \* num))
+async def print_cube(num):
+  print("Cube: {}".format(num * num * num))
 
 async def main():
   # Schedule coroutines to run concurrently
   await asyncio.gather(
-    print\_square(10),
-    print\_cube(10)
+    print_square(10),
+    print_cube(10)
   )
 
 asyncio.run(main()) 
-
+```
 We define coroutines using async/await syntax. The event loop schedules execution of coroutines and runs them consecutively.
 
 Asyncio is best suited for IO-bound tasks and use cases where execution consists of waiting on network responses, database queries etc. It provides high throughput and minimizes blocking.
