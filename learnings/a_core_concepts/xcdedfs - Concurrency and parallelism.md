@@ -1,5 +1,5 @@
-Concurrency and parallelism in Java
-===================================
+Concurrency and parallelism 
+=============================
 
 Why we should know concurrency and parallelism? These concepts are very important and complex with every developer. They don’t depend on any languages such as Java, C, PHP, Swift, and so on.
 
@@ -10,10 +10,6 @@ After reading this article, you will understand things:
 *   The limitations of concurrency
 *   Common problems of concurrency
 *   Benefits/problems of Multithreading
-*   Thread in Java: Executor framework and Thread Pool, Thread Synchronization, Locks and Atomic Variables
-*   How to use CompletableFuture in Java?
-*   How to use Parallelism in Java? Give you some case studies
-*   Some notes when we use concurrency and parallelism
 
 What are concurrency and parallelism?
 =====================================
@@ -92,53 +88,6 @@ Problems of Multithreading
 *   **The higher cost of code maintenance**: Since the code has now had multiple levels of complexity added to it.
 *   **More demand on the system:** The creation of each thread consumes additional memory, CPU cycles for book-keeping, and time spent on witching contexts. Additionally, keep in mind if a processor is going to run 5 threads simultaneously it will also need to keep information about each of those processes around and accessible while other ones execute, requiring more registers.
 
-Thread in Java
-==============
-
-**Creating and Managing Thread**
-
-There are two options for creating a Thread in Java. Each thread is created in Java 8 will consume about 1MB as default on OS 64 bit. You can check via command line: _java -XX:+PrintFlagsFinal -version | grep ThreadStackSize._
-
-*   **Option 1**: You can create a class that inherits the Thread.java class.
-*   **Option 2**: You can use a Runnable object.
-
-In my option, you should use a Runnable object to creating a Thread. It’s very flexible. We also can _pause_ a Thread via _sleep() method_ and _waiting_ for the completion of another thread via the _join() method_. Thread has three priorities: Thread._MIN_PRIORITY (1),_ Thread._NORM_PRIORITY(5),_ Thread._MAX_PRIORITY(10)._ The default thread has priority: Thread.NORM_PRIORITY.
-
-To create and manage Thread in Java you can use the Executors framework. Java Concurrency API defines three executor interfaces that cover everything that is needed for creating and managing threads:
-
-*   **Executor**: launch a task specified by a `Runnable` object.
-*   **ExecutorService**: a sub-interface of `Executor` that adds functionality to manage the lifecycle of the tasks.
-*   **ScheduledExecutor**: a sub-interface of `ExecutorService` that adds functionality to schedule the execution of the tasks.
-
-Most of the executor implementations use _thread pools_ to execute tasks.
-
-![](https://miro.medium.com/v2/resize:fit:1260/1*NfpH4OUeD49DExLryK0aRQ.png)
-
-Executor Service. Source: baeldung.com
-
-**Synchronization & Locks:** In a multiple-thread program, access to shared variables must be synchronized in order to prevent race conditions. We can use the `synchronized` keyword for method or block. Besides, you can use the `volatile` keyword to avoid memory consistency errors in multi-thread programs. If you mark a variable as `volatile` the compiler won’t optimize or reorder instructions around that variable.
-
-Instead of using an intrinsic lock via the `synchronized` keyword, you can also use various Locking classes provided by Java Concurrency API: ReentrantLock(since java 1.5), ReadWriteLock(since java 1.5), StampedLock(since java 1.8) and Atomic Variables(since java 1.5): _AtomicInteger, AtomicBoolean, AtomicLong, AtomicReference_ and so on. More details: [https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/package-summary.html)
-
-**How to use CompletableFuture in Java?**
-=========================================
-
-CompletableFuture is used for asynchronous programming in Java. Asynchronous programming is a means of writing non-blocking code by running a task on a separate thread than the main application thread and notifying the main thread about its progress, completion of failure. This way, the main thread doesn’t block/wait for the completion of the task and it can execute other tasks in concurrent or parallel.
-
-Basically, CompletableFuture is implemented two interfaces: Future(since java 1.5) and CompletationStage. It provides a huge set of convenience methods for creating, chaining, and combining multiple Futures. It also has a very comprehensive exception handling support. Its complements limitations of Future such as: can’t be manually completed, can’t perform further action on a Future’s result without blocking, multiple futures can’t be chained together, you can’t combine multiple Futures together, no exception handling.
-
-*   You can create a Completable simply by using the following no-arg constructor: `new CompletableFuture<String>();` and call `get()` method to receive the result. In this case, the `get()` method will block until the Future is complete.
-*   If you want to run some background tasks asynchronously and don’t wanna return anything from the task. You can use `CompletableFuture.runAsync()` method.
-*   If you want to run some background tasks asynchronously and wanna return something. You can use `Completable.supplyAsync()` method.
-*   Moreover, you can also use the Executors framework(Executor, ServiceExecutor) to run something in the background. I highly recommend you use them in your project:
-
-*   Because the `CompletableFuture.get()` method is blocking. It waits for util the Future is completed and returns the result after its completion. In case, we won’t need to wait for the result and handle logic after completion of the Future. You can use callback methods: `thenApply()`, `thenApplyAsync()`, `thenAccept()` and `thenRun()` methods. To transform the result of CompletableFuture when it arrives you can use `thenApply()` and `thenApplyAsync()` (Run in a different thread with `supplyAsync()` or executor from ForkJoinPool.commonPool()).
-*   If you don’t wanna return anything from your callback and just wanna run some codes after the completion of CompletableFuture you can use: `thenAccept()` and `thenRun()`.
-*   You can combine two dependent futures using `themCompose()` , and combine two independent futures using `thenCombine()`. In case, you wanna run a list of CompletableFuture and do something after all of them are complete. You can use the `CompletableFuture.allOf(` method.
-*   You can handle exceptions via using `exceptionally()` callback and using the generic `handle()` method
-
-More details: [https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html)
-
 How to use Parallelism in Java?
 ===============================
 
@@ -168,20 +117,7 @@ Some notes when we use concurrency and parallelism in Java
 
 If you have any doubts/questions, please comment here !!!. Thank you for your reading !!!.
 
-References
-==========
-
-*   [https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/package-summary.html)
-*   [https://blog.golang.org/waza-talk#:~:text=In%20programming%2C%20concurrency%20is%20the,lots%20of%20things%20at%20once.](https://blog.golang.org/waza-talk)
-*   [https://medium.com/@k.wahome/concurrency-is-not-parallelism-a5451d1cde8d](/@k.wahome/concurrency-is-not-parallelism-a5451d1cde8d)
-*   [https://medium.com/educative/java-multithreading-and-concurrency-for-senior-engineering-interviews-9d8c970cd4ce](/educative/java-multithreading-and-concurrency-for-senior-engineering-interviews-9d8c970cd4ce)
-*   [https://www.callicoder.com/java-concurrency-multithreading-basics/](https://www.callicoder.com/java-concurrency-multithreading-basics/)
-*   [https://dzone.com/articles/how-much-memory-does-a-java-thread-take](https://dzone.com/articles/how-much-memory-does-a-java-thread-take)
-*   [https://www.callicoder.com/java-8-completablefuture-tutorial/](https://www.callicoder.com/java-8-completablefuture-tutorial/)
-*   [https://www.developer.com/java/data/parallel-programming-basics-with-the-forkjoin-framework-in-java.html](https://www.developer.com/java/data/parallel-programming-basics-with-the-forkjoin-framework-in-java.html)
-
-
-  -----------------------------------------------------------------------
+-----------------------------------------------------------------------
 
  ### global interpreter lock
 The mechanism used by the CPython interpreter to assure that only one thread executes Python bytecode at a time. This simplifies the CPython implementation by making the object model (including critical built-in types such as dict) implicitly safe against concurrent access. Locking the entire interpreter makes it easier for the interpreter to be multi-threaded, at the expense of much of the parallelism afforded by multi-processor machines.
