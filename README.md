@@ -18,28 +18,19 @@
 
 * 🖥️  See my portfolio at [https://vijaynandrp.com](https://vijayanandrp.com)
   
+![pexels-ákos-szabó-440731](https://github.com/vijayanandrp/vijayanandrp/assets/3804538/8c6d2b2d-1cb9-498a-877b-9d2f5a08af73)
 
-<a href="https://github.com/vijayanandrp/github-readme-stats">
-  <img align="center" src="https://github-readme-stats.vercel.app/api?username=vijayanandrp&show_icons=true&count_private=true&theme=dark&include_all_commits=true" alt="Jayendran's github stats" />
-</a>
+
+
+<!--
 <a href="https://github.com/vijayanandrp/github-readme-stats">  
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=vijayanandrp&theme=dark&&layout=compact" />
 </a>
 
-
-<!--
+<a href="https://github.com/vijayanandrp/github-readme-stats">
+  <img align="center" src="https://github-readme-stats.vercel.app/api?username=vijayanandrp&show_icons=true&count_private=true&theme=dark&include_all_commits=true" alt="ijayanandrp's github stats" />
+</a>
 **vijayanandrp/vijayanandrp** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=vijayanandrp&langs_count=8)](https://github.com/vijayanandrp/blog)
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=vijayanandrp&label=Profile%20views&color=0e75b6&style=flat" alt="vijayanandrp" /> </p>
