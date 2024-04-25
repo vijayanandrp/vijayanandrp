@@ -22,21 +22,28 @@ Example Script how to add the concept of primary/foreign keys.
 
 ```terraform
 
-resource "google_bigquery_table" "dim_table" {
+
+resource "google_bigquery_table" "dimension_table_1" {
   deletion_protection = false
   provider    = google.impersonated
   dataset_id  = google_bigquery_dataset.raw_ds.dataset_id
-  table_id    = "xxx_dim_table"
-  description = "Dimension table"
-  friendly_name  = "Dimension table"
+  table_id    = "xxx_dim_table_1"
+  description = "Dimension table 1"
+  friendly_name  = "Dimension table 1"
+
 
   time_partitioning {
     type = "DAY"
   }
 
+
+  # PRIMARY KEY ONLY
   table_constraints {
-    primary_key { columns = ["id"] }
+    primary_key { 
+      columns = ["id"] 
+    }
   }
+
 
   schema = <<EOF
   [
@@ -61,51 +68,41 @@ resource "google_bigquery_table" "dim_table" {
   ]
   EOF
 
+
   clustering  = [
     "state"
   ]
+
 
   labels = {
     env = "dev"
   }
 
+
 }
 
 
-resource "google_bigquery_table" "metric_table" {
+resource "google_bigquery_table" "dimension_table_2" {
   deletion_protection = false
   provider    = google.impersonated
   dataset_id  = google_bigquery_dataset.raw_ds.dataset_id
-  table_id    = "xxx_metric_table"
-  description = "Metric table"
-  friendly_name  = "Metric table"
+  table_id    = "xxx_dim_table_2"
+  description = "Dimension table 2"
+  friendly_name  = "Dimension table 2"
+
 
   time_partitioning {
     type = "DAY"
   }
 
+
+  # PRIMARY KEY ONLY
   table_constraints {
-    
-    primary_key { columns = ["id"] }
-
-    foreign_keys { 
-
-      # Fields must contain only letters, numbers, and underscores, start with a letter 
-      # or underscore, and be at most 300 characters long
-      name = "dim_fk_key"
-
-      referenced_table {
-        project_id  = google_bigquery_dataset.raw_ds.project
-        dataset_id  = google_bigquery_dataset.raw_ds.dataset_id
-        table_id    = "xxx_dim_table"
-      }
-
-      column_references {
-        referencing_column = "dim_id"
-        referenced_column = "id"
-      }
+    primary_key { 
+      columns = ["id"] 
     }
   }
+
 
   schema = <<EOF
   [
@@ -116,10 +113,121 @@ resource "google_bigquery_table" "metric_table" {
       "description": "Identity column"
     },
     {
-      "name": "dim_id",
+      "name": "name",
+      "type": "STRING",
+      "mode": "NULLABLE",
+      "description": "Name"
+    },
+    {
+      "name": "state",
+      "type": "STRING",
+      "mode": "NULLABLE",
+      "description": "State where the head office is located"
+    }
+  ]
+  EOF
+
+
+  clustering  = [
+    "state"
+  ]
+
+
+  labels = {
+    env = "dev"
+  }
+
+
+}
+
+
+
+
+resource "google_bigquery_table" "metric_table" {
+  deletion_protection = false
+  provider    = google.impersonated
+  dataset_id  = google_bigquery_dataset.raw_ds.dataset_id
+  table_id    = "xxx_metric_table"
+  description = "Metric table"
+  friendly_name  = "Metric table"
+
+
+  time_partitioning {
+    type = "DAY"
+  }
+
+
+  # PRIMARY KEY AND 2 FOREIGN KEYS
+  table_constraints {
+
+
+    primary_key { 
+      columns = ["id"] 
+    }
+    
+    foreign_keys { 
+
+
+      name = "dim_fk_key_1"
+
+
+      referenced_table {
+        project_id  = google_bigquery_dataset.raw_ds.project
+        dataset_id  = google_bigquery_dataset.raw_ds.dataset_id
+        table_id    = "xxx_dim_table_1"
+      }
+
+
+      column_references {
+        referencing_column = "dim_id_1"
+        referenced_column = "id"
+      }
+   }
+
+
+    foreign_keys { 
+
+
+      name = "dim_fk_key_2"
+
+
+      referenced_table {
+        project_id  = google_bigquery_dataset.raw_ds.project
+        dataset_id  = google_bigquery_dataset.raw_ds.dataset_id
+        table_id    = "xxx_dim_table_2"
+      }
+
+
+      column_references {
+        referencing_column = "dim_id_2"
+        referenced_column = "id"
+      }
+    }
+  
+    
+  }
+  
+
+
+  schema = <<EOF
+  [
+    {
+      "name": "id",
       "type": "INTEGER",
       "mode": "REQUIRED",
-      "description": "Dimension Identity column"
+      "description": "Identity column"
+    },
+    {
+      "name": "dim_id_1",
+      "type": "INTEGER",
+      "mode": "REQUIRED",
+      "description": "Dimension table 1 - Identity column"
+    },
+    {
+      "name": "dim_id_2",
+      "type": "INTEGER",
+      "mode": "REQUIRED",
+      "description": "Dimension table 2 - Identity column"
     },
     {
       "name": "value",
@@ -136,11 +244,14 @@ resource "google_bigquery_table" "metric_table" {
   ]
   EOF
 
+
   labels = {
     env = "dev"
   }
 
+
 }
+
 
 ```
 
