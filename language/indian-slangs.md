@@ -1,4 +1,4 @@
-# Greeting
+# Greetings
 
 | english                      | tamil                                     | hindi                                      | kannada                                | telugu                                     | malayalam                             |
 |------------------------------|-------------------------------------------|--------------------------------------------|----------------------------------------|--------------------------------------------|---------------------------------------|
@@ -26,13 +26,6 @@
 | Thanks                       | Naṉṟi                                     | dhanyavaad                                 | Dhan'yavādagaḷu                        | Dhan'yavādālu                              | nandi                                 |
 | Thank you                    | Naṉṟi                                     | dhanyavaad                                 | Dhan'yavāda                            | Dhan'yavādālu                              | nandi                                 |
 | Pleasure                     | Iṉpam                                     | aanand                                     | Santōṣa                                | Ānandaṁ                                    | sandosham                             |
-
-# Template
-
-| English | Tamil | Telugu | Kanada | Malayalam | Hindi |
-|---------|-------|--------|--------|-----------|-------|
-|         |       |        |        |           |       |
-|         |       |        |        |           |       |
 
 
 
