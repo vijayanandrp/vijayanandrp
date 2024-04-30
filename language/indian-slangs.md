@@ -6,8 +6,8 @@
 | Hello|  Vaṇakkam    |halayaa| Namaskāra| halayaa | namaste      |
 
 
-
-
+Hi
+Hello
 How are you?
 Good evening
 Afternoon
@@ -21,13 +21,15 @@ Alright
 Dear Sir or Madam
 How have you been?
 Howdy
-Yo
 Greetings
 To Whom it May Concern
 Allow me to introduce myself
 Hello Stranger
 Bye
 Good Day
+Thanks
+Thank you
+Pleasure
 
 # Template
 
