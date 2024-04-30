@@ -33,3 +33,52 @@
 |---------|-------|--------|--------|-----------|-------|
 |         |       |        |        |           |       |
 |         |       |        |        |           |       |
+
+
+
+```python
+%pip install googletrans==4.0.0rc1 
+
+from googletrans import Translator
+
+translator = Translator(
+    service_urls=['translate.google.com', 
+                  'translate.google.co.in']
+    )
+
+target_language = {'ta': 'tamil', 'hi': 'hindi',  'kn': 'kannada', 'te': 'telugu', 'ml': 'malayalam'}
+
+source = {'en': 'english'}
+
+words = {'greetings': ['Hi', 'Hello', 'How are you?', 'Good evening', 'Afternoon', 
+                       'Good Morning', 'How do you do', 'Hey', 'Pleased to meet you',
+                       'Good to see you', 'Long time no see', 'Alright', 'Dear Sir or Madam', 
+                       'How have you been?', 'Howdy', 'Greetings', 'To Whom it May Concern',
+                       'Allow me to introduce myself', 'Hello Stranger', 'Bye', 
+                       'Good Day', 'Thanks', 'Thank you', 'Pleasure']
+}
+
+translated_dict = {}
+
+for dest in target_language.keys():
+  for word in words['greetings']:
+    translate = translator.translate(word, src='en', dest=dest)
+    if word not in translated_dict:
+      translated_dict[word] = []
+    translated_dict[word].append((target_language[dest], translate.pronunciation ))
+  
+revised_dict = []
+
+for key in translated_dict.keys():
+  value = dict(translated_dict[key])
+  revised_dict.append({**{'english': key}, **value})
+
+import pandas as pd
+
+df = pd.DataFrame(revised_dict)
+
+df
+
+print(df.to_markdown(tablefmt="github", index=False))
+
+```
