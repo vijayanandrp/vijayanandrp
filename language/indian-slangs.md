@@ -1,8 +1,8 @@
 # Greeting
 
-| English | Tamil | Telugu | Kanada | Malayalam | Hindi |
+| English | Tamil | Telugu | Kannada| Malayalam | Hindi |
 |---------|-------|--------|--------|-----------|-------|
-| Hi      |       |        |        |           |       |
+| Hi      |Vaṇakkam| Hāy    | Namaste|     hai   |namaste|
 |         |       |        |        |           |       |
 
 Hello
