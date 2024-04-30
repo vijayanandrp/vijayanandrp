@@ -3,14 +3,15 @@
 | English | Tamil | Telugu | Kannada| Malayalam | Hindi |
 |---------|-------|--------|--------|-----------|-------|
 | Hi      |Vaṇakkam| Hāy    | Namaste|     hai   |namaste|
-|         |       |        |        |           |       |
+| Hello|  Vaṇakkam    |halayaa| Namaskāra| halayaa | namaste      |
 
-Hello
+
+
+
 How are you?
 Good evening
 Afternoon
 Good Morning
-Hi
 How do you do?
 Hey
 Pleased to meet you
