@@ -23,6 +23,8 @@ The effective policy for a resource is the union of the policy set on the resour
 ![image](https://github.com/vijayanandrp/vijayanandrp/assets/3804538/c4a3cb3c-aea4-4739-8f29-2529d71c208b)
 
 
+![image](https://github.com/vijayanandrp/vijayanandrp/assets/3804538/72bc5d5f-0e86-4ee5-bb4c-49386a11ce4d)
+
 # Google Cloud database/storage decision tree
 
 ![image](https://github.com/vijayanandrp/vijayanandrp/assets/3804538/444d2d6a-7774-4fce-8f2a-ac8a683b43be)
