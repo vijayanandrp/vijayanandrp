@@ -1,14 +1,17 @@
+https://docs.google.com/forms/d/e/1FAIpQLSfkWEzBCP0wQ09ZuFm7G2_4qtkYbfmk_0getojdnPdCYmq37Q/viewscore?viewscore=AE0zAgAS7Gv-f0w-ehgVJ3W6h3Ws3Zo7Cp_efU4fvQfQdZo4RkPTVNfxDvQPigAI0zExTZw
 
+-------------------------------------------------
 
 **Cloud SQL** provides managed MySQL, PostgreSQL, and SQL Server databases, which will reduce administrative effort. Twenty-five TB can be accommodated efficiently on Cloud SQL.
 
 **Cloud SQL** options are regional and have less scalability compared to **Cloud Spanner**.
 
- > You want to migrate the database to Google Cloud. You need a solution that will provide global scale and availability and require minimal maintenance. What should you do?
+-------------------------------------------------
+You want to migrate the database to Google Cloud. You need a solution that will provide global scale and availability and require minimal maintenance. What should you do?
 
 Migrate to **Cloud Spanner.**
 
-> Your **Cloud Spanner** database stores customer address information that is frequently accessed by the marketing team. When a customer enters the country and the state where they live, this information is stored in different tables connected by a foreign key. The current architecture has performance issues. You want to follow Google-recommended practices to improve performance. What should you do?
+Your **Cloud Spanner** database stores customer address information that is frequently accessed by the marketing team. When a customer enters the country and the state where they live, this information is stored in different tables connected by a foreign key. The current architecture has performance issues. You want to follow Google-recommended practices to improve performance. What should you do?
 
 A. Create interleaved tables, and store states under the countries.
 
@@ -21,6 +24,7 @@ C: Option C is not correct because reducing the size of the fields to short name
 
 D: Option D is not correct because packing multiple types of data into the same cell is not recommended for relational databases.
 
+-------------------------------------------------
 
 **Bigtable** is the recommended database for time series data that requires high throughput reads and writes.
 
@@ -38,9 +42,17 @@ Example:
  Construct the key as user-id#device-id#activity-id#timestamp.
  the design does not monotonically increase, thus avoiding hotspots.
 
-
+-------------------------------------------------
 
   **BigQuery** doesn’t support global scale. BigQuery also isn’t the best option for migrating a transactional database like PostgreSQL because it is more analytics-focused.
+
+  
+You are working on optimizing **BigQuery** for a query that is run repeatedly on a single table. The data queried is about 1 GB, and some rows are expected to change about 10 times every hour. You have optimized the SQL statements as much as possible. You want to further optimize the query's performance. What should you do?
+
+A. Create a **materialized view** based on the table, and query that view.
+A: Option A is correct because materialized views periodically cache the results of a query for increased performance. Materialized views are suited to small datasets that are frequently queried. When underlying table data changes, the materialized view invalidates the affected portions and re-reads them.
+
+-------------------------------------------------
 
  **Dataflow** to recreate the jobs in a serverless approach. Move the data to Cloud Storage.
  . Use hopping windows in Dataflow. for moving averages
@@ -49,8 +61,11 @@ Your scooter-sharing company collects information about their scooters, such as 
 
  . Use **Dataflow** to subscribe to Pub/Sub, process the data, and store the data in BigQuery.
 
+-------------------------------------------------
 
  graceful decommissioning will finish work in progress on a worker node before it is removed from the **Dataproc** cluster.
 
+
+-------------------------------------------------
 
  Use a **Transfer Appliance** to move the existing data to Google Cloud. Set up a Dedicated or Partner Interconnect for daily transfers.
