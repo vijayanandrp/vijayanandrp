@@ -8,6 +8,15 @@ https://googlecloudcheatsheet.withgoogle.com/
 ![image](https://github.com/vijayanandrp/vijayanandrp/assets/3804538/aad234a0-9add-47bb-b41d-3560a73ce2ca)
 
 
+|||
+|--- |--- |
+|Open source|Google Cloud managed service|
+|Hadoop, Spark, Hive|Dataproc|
+|Beam|Dataflow|
+|Airflow|Cloud Composer|
+|Kafka, RabbitMQ|Pub/Sub|
+|Cassandra|Cloud Bigtable|
+
 # Google Cloud data transformation tools decision tree (Dataproc or Dataflow)
 
 ![image](https://github.com/vijayanandrp/vijayanandrp/assets/3804538/17c2bb28-44ff-4ff6-99ba-785212e3b237)
