@@ -1,5 +1,153 @@
 # Main Points
 ============
+
+
+2024 New Google Professional Data Engineer Certification Exam Guide
+===================================================================
+
+[
+
+![Manojkumar Vadivel](https://miro.medium.com/v2/resize:fill:88:88/1*u-ydHp3FLrjwpyN4Fgwj3w.png)
+
+
+
+
+
+
+
+
+
+](/@manojkumar.vadivel?source=post_page-----0cf63622a4d1--------------------------------)
+
+[Manojkumar Vadivel](/@manojkumar.vadivel?source=post_page-----0cf63622a4d1--------------------------------)
+
+·
+
+Follow
+
+3 min read
+
+·
+
+Jan 5, 2024
+
+233
+
+6
+
+[
+
+Listen
+
+
+
+
+
+
+
+](/plans?dimension=post_audio_button&postId=0cf63622a4d1&source=upgrade_membership---post_audio_button----------------------------------)
+
+Share
+
+More
+
+![Professional Data Engineer Certification Logo](https://miro.medium.com/v2/resize:fit:468/0*em3c24RMMNqAzf-8.png)
+
+I have successfully re-certified Google’s new version of Professional Data Engineer exam, I realized that there are no online courses out there that prepare people for the new version of the exam, so sharing my experience.
+
+Google Cloud updated the exam guide for the Professional data engineering certification exam, Starting from **November 13th 2023,** If you planning to take the exam refer to the new updated guide.
+
+I have been certified for the third consecutive time, Compared to previous version of PDE exam, This time got very realistic practical questions with stronger focus on Data Engineering topics.
+
+Previously Google included many Data science and Machine learning related questions which may not relevant to data engineering related tasks. For that Google introduced new “Machine Learning Engineer” Certification.
+
+The Professional Data Engineer exam assesses your skills in following area:
+
+> Designing Data Processing system  
+> Data Ingestion and Preparation  
+> Data Storage  
+> Data Analysis  
+> Automating Workloads  
+> Monitoring & Alerting Data System  
+> Cost Optimisation  
+> Access Management
+
+In the new version, Google incorporated their recent big data products such as **BQ Omni, Analytics Hub, VertexAI, DataPlex, DataLake and Redis MemoryStore** into the syllabus
+
+Top Priority Topics:
+====================
+
+I Encountered more questions from the following topics, So I suggest deep dive into following mentioned services
+
+1.  BigQuery
+2.  Cloud storage
+3.  Dataflow
+4.  BigTable
+5.  Dataproc
+6.  CloudSQL
+7.  Spanner
+8.  Pub/sub
+
+Understanding the features and uses of these services is crucial for data engineering in Google cloud. It will boost your confidence in answering related questions during the exam. you can expect **more then 50% questions** from these sections
+
+Secondary Importance:
+=====================
+
+1.  Cloud Composer
+2.  DataFusion
+3.  DLP API
+4.  DataPrep
+5.  Analytics Hub
+6.  DataStore
+7.  Transfer Service
+8.  BQ Administration (Slot Management).
+
+Expect **1 to 3 questions** from these sections. so allocating sufficient study time to grasp the nuances of these topics is highly recommended
+
+Considerable Priority:
+======================
+
+Be ready for **1 to 2 questions** about the following Google Cloud services. These services are new additions specifically related to Data Engineering, so make sure to overlook them in your preparation.
+
+*   BQ Omni
+*   DataLake
+*   Redis Memory Store
+*   Dataform
+*   DataStream
+*   VertexAI
+*   DataPlex
+*   Org Policies
+*   ML Engineering.
+
+Additionally, you may receive questions from other fundamental topics like Networking, Monitoring, Logging and Alerting services.
+
+Study Materials:
+----------------
+
+1.  CloudGuru: [https://www.pluralsight.com/cloud-guru/courses/google-certified-professional-data-engineer](https://www.pluralsight.com/cloud-guru/courses/google-certified-professional-data-engineer)
+2.  Product Documentations: [https://cloud.google.com/learn/certification/guides/data-engineer](https://cloud.google.com/learn/certification/guides/data-engineer)
+3.  Practice Google’s Sample Questions: [https://docs.google.com/forms/d/e/1FAIpQLSfkWEzBCP0wQ09ZuFm7G2\_4qtkYbfmk\_0getojdnPdCYmq37Q/viewform](https://docs.google.com/forms/d/e/1FAIpQLSfkWEzBCP0wQ09ZuFm7G2_4qtkYbfmk_0getojdnPdCYmq37Q/viewform)
+4.  Practice passnexam.com sample questions: [https://www.passnexam.com/google/professional-data-engineer](https://www.passnexam.com/google/professional-data-engineer)
+
+Solving a significant number of practice questions can boost your confidence and provide insight into question patterns. However, it’s important to note that Google has updated the exam questions, and you can expect a maximum of **3 to 5 questions** only from the practice dumps. Therefore, your hands-on experience with Google Cloud Platform (GCP) plays vital role clear the certification.
+
+I hope this information proves helpful. Best of luck if you are planning to take the new PDE certification exam.
+
+[
+
+Professional Data Engineer \* Manojkumar Vadivel \* Google Cloud
+----------------------------------------------------------------
+
+### I got Google Cloud Certified! I have what it takes to leverage Google Cloud technology https://goo.gl/qpCWAE
+
+google.accredible.com
+
+
+
+](https://google.accredible.com/e703433a-e720-45d3-99bd-03927968011f?record_view=true&source=post_page-----0cf63622a4d1--------------------------------)
+
+PS if you have any questions, or would like something clarified, you can find me on [LinkedIn.](https://www.linkedin.com/in/manojkumar-vadivel-206220a6/)
+
 https://medium.com/@manojkumar.vadivel/2024-new-google-professional-data-engineer-certification-exam-guide-0cf63622a4d1
 
 
