@@ -1,3 +1,8 @@
+# Main Points
+============
+https://medium.com/@manojkumar.vadivel/2024-new-google-professional-data-engineer-certification-exam-guide-0cf63622a4d1
+
+
 https://docs.google.com/forms/d/e/1FAIpQLSfkWEzBCP0wQ09ZuFm7G2_4qtkYbfmk_0getojdnPdCYmq37Q/viewscore?viewscore=AE0zAgAS7Gv-f0w-ehgVJ3W6h3Ws3Zo7Cp_efU4fvQfQdZo4RkPTVNfxDvQPigAI0zExTZw
 
 -------------------------------------------------
