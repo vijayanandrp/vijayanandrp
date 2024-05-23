@@ -1,55 +1,10 @@
 # Main Points
 ============
 
+https://medium.com/@manojkumar.vadivel/2024-new-google-professional-data-engineer-certification-exam-guide-0cf63622a4d1
 
 2024 New Google Professional Data Engineer Certification Exam Guide
 ===================================================================
-
-[
-
-![Manojkumar Vadivel](https://miro.medium.com/v2/resize:fill:88:88/1*u-ydHp3FLrjwpyN4Fgwj3w.png)
-
-
-
-
-
-
-
-
-
-](/@manojkumar.vadivel?source=post_page-----0cf63622a4d1--------------------------------)
-
-[Manojkumar Vadivel](/@manojkumar.vadivel?source=post_page-----0cf63622a4d1--------------------------------)
-
-·
-
-Follow
-
-3 min read
-
-·
-
-Jan 5, 2024
-
-233
-
-6
-
-[
-
-Listen
-
-
-
-
-
-
-
-](/plans?dimension=post_audio_button&postId=0cf63622a4d1&source=upgrade_membership---post_audio_button----------------------------------)
-
-Share
-
-More
 
 ![Professional Data Engineer Certification Logo](https://miro.medium.com/v2/resize:fit:468/0*em3c24RMMNqAzf-8.png)
 
