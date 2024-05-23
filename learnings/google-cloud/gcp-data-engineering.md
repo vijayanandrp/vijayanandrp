@@ -8,6 +8,8 @@
 5. Dan Sulavian GCP DE pdf
 6. Linux Academy book pdf
 7. Mock Questions - Practice
+8. Review - https://cloud.google.com/learn/certification/guides/data-engineer (Learnings)
+   
    
 
 2024 New Google Professional Data Engineer Certification Exam Guide
