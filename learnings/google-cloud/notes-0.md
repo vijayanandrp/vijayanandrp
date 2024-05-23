@@ -4,6 +4,11 @@
 1. https://medium.com/@manojkumar.vadivel/2024-new-google-professional-data-engineer-certification-exam-guide-0cf63622a4d1
 2. https://www.googlecloudcommunity.com/gc/Community-Blogs/Your-guide-to-preparing-for-the-Google-Cloud-Professional-Data/ba-p/543105
 3. https://cloud.google.com/blog/products/data-analytics/decision-tree-for-data-analytics-workloads-on-google-cloud
+4. Zero to Hero GCP pdf
+5. Dan Sulavian GCP DE pdf
+6. Linux Academy book pdf
+7. Mock Questions - Practice
+   
 
 2024 New Google Professional Data Engineer Certification Exam Guide
 ===================================================================
