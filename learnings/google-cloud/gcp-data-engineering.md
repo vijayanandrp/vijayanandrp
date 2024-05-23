@@ -1,5 +1,6 @@
 # Main Points
-============
+------------------------
+
 
 1. https://medium.com/@manojkumar.vadivel/2024-new-google-professional-data-engineer-certification-exam-guide-0cf63622a4d1
 2. https://www.googlecloudcommunity.com/gc/Community-Blogs/Your-guide-to-preparing-for-the-Google-Cloud-Professional-Data/ba-p/543105
@@ -13,8 +14,7 @@
    
 
 2024 New Google Professional Data Engineer Certification Exam Guide
-===================================================================
-
+----------------------------
 ![Professional Data Engineer Certification Logo](https://miro.medium.com/v2/resize:fit:468/0*em3c24RMMNqAzf-8.png)
 
 I have successfully re-certified Google’s new version of Professional Data Engineer exam, I realized that there are no online courses out there that prepare people for the new version of the exam, so sharing my experience.
