@@ -197,11 +197,13 @@ https://www.googlecloudcommunity.com/gc/Community-Blogs/Your-guide-to-preparing-
 |||
 |--- |--- |
 |Open source|Google Cloud managed service|
+|warehouse|bigquery|
 |Hadoop, Spark, Hive|Dataproc|
 |Beam|Dataflow|
 |Airflow|Cloud Composer|
 |Kafka, RabbitMQ|Pub/Sub|
 |Cassandra|Cloud Bigtable|
+|MongoDB|Cloud Firestore|
 
 
 # Study the Google Cloud Resource Hierarchy 
