@@ -203,7 +203,7 @@ https://www.googlecloudcommunity.com/gc/Community-Blogs/Your-guide-to-preparing-
 |Airflow|Cloud Composer|
 |Kafka, RabbitMQ|Pub/Sub|
 |Cassandra|Cloud Bigtable|
-|MongoDB|Cloud Firestore|
+|MongoDB|Cloud Firestore(Mobile App) or Cloud DataStore|
 
 
 # Study the Google Cloud Resource Hierarchy 
