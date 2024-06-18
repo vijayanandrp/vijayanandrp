@@ -4,18 +4,24 @@ https://googlecloudcheatsheet.withgoogle.com/
 
 [ Data Analytics - Sheet ](https://cloud.google.com/blog/products/data-analytics/decision-tree-for-data-analytics-workloads-on-google-cloud)
 
+|||
+|--- |--- |
+|Open source|Google Cloud managed service|
+|warehouse|bigquery|
+|Hadoop, Spark, Hive|Dataproc|
+|Beam (stream/Batch)|Dataflow|
+|Airflow|Cloud Composer|
+|Kafka, RabbitMQ|Pub/Sub|
+|Cassandra,HBase|Cloud Bigtable|
+|MongoDB|Cloud Firestore(Mobile App) or Cloud DataStore|
+|Redis| Cloud MemoryStore|
+
 
 ![image](https://github.com/vijayanandrp/vijayanandrp/assets/3804538/aad234a0-9add-47bb-b41d-3560a73ce2ca)
 
 
-|||
-|--- |--- |
-|Open source|Google Cloud managed service|
-|Hadoop, Spark, Hive|Dataproc|
-|Beam|Dataflow|
-|Airflow|Cloud Composer|
-|Kafka, RabbitMQ|Pub/Sub|
-|Cassandra|Cloud Bigtable|
+https://www.googlecloudcommunity.com/gc/Community-Blogs/Your-guide-to-preparing-for-the-Google-Cloud-Professional-Data/ba-p/543105
+
 
 # Google Cloud data transformation tools decision tree (Dataproc or Dataflow)
 
