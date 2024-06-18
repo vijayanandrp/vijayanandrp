@@ -1,5 +1,3 @@
-https://www.googlecloudcommunity.com/gc/Community-Blogs/Your-guide-to-preparing-for-the-Google-Cloud-Professional-Data/ba-p/543105
-
 
 |||
 |--- |--- |
