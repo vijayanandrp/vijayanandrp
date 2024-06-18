@@ -1,7 +1,22 @@
+https://www.googlecloudcommunity.com/gc/Community-Blogs/Your-guide-to-preparing-for-the-Google-Cloud-Professional-Data/ba-p/543105
+
+
+|||
+|--- |--- |
+|Open source|Google Cloud managed service|
+|warehouse|bigquery|
+|Hadoop, Spark, Hive|Dataproc|
+|Beam (stream/Batch)|Dataflow|
+|Airflow|Cloud Composer|
+|Kafka, RabbitMQ|Pub/Sub|
+|Cassandra,HBase|Cloud Bigtable|
+|MongoDB|Cloud Firestore(Mobile App) or Cloud DataStore|
+|Redis| Cloud MemoryStore|
+
+
+
 # Main Points
 ------------------------
-
-
 1. https://medium.com/@manojkumar.vadivel/2024-new-google-professional-data-engineer-certification-exam-guide-0cf63622a4d1
 2. https://www.googlecloudcommunity.com/gc/Community-Blogs/Your-guide-to-preparing-for-the-Google-Cloud-Professional-Data/ba-p/543105
 3. https://cloud.google.com/blog/products/data-analytics/decision-tree-for-data-analytics-workloads-on-google-cloud
@@ -189,22 +204,6 @@ Your scooter-sharing company collects information about their scooters, such as 
 
 
 ---------------------------------------------
-
-
-https://www.googlecloudcommunity.com/gc/Community-Blogs/Your-guide-to-preparing-for-the-Google-Cloud-Professional-Data/ba-p/543105
-
-
-|||
-|--- |--- |
-|Open source|Google Cloud managed service|
-|warehouse|bigquery|
-|Hadoop, Spark, Hive|Dataproc|
-|Beam|Dataflow|
-|Airflow|Cloud Composer|
-|Kafka, RabbitMQ|Pub/Sub|
-|Cassandra|Cloud Bigtable|
-|MongoDB|Cloud Firestore(Mobile App) or Cloud DataStore|
-
 
 # Study the Google Cloud Resource Hierarchy 
 Make sure you’re familiar with the Google Cloud Resource hierarchy, including how and when permissions are assigned. Google Cloud offers IAM, which lets you assign granular access to specific Google Cloud resources and prevents unwanted access to other resources. IAM lets you control who (users) has what access (roles) to which resources by setting IAM policies on the resources.
