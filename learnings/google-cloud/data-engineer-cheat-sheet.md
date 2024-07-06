@@ -6,7 +6,7 @@ https://googlecloudcheatsheet.withgoogle.com/
 
 |||
 |--- |--- |
-|Open source|Google Cloud managed service|
+|**Open source**|**Google Cloud managed service**|
 |warehouse|bigquery|
 |Hadoop, Spark, Hive|Dataproc|
 |Beam (stream/Batch)|Dataflow|
