@@ -4,17 +4,20 @@ https://googlecloudcheatsheet.withgoogle.com/
 
 [ Data Analytics - Sheet ](https://cloud.google.com/blog/products/data-analytics/decision-tree-for-data-analytics-workloads-on-google-cloud)
 
-|||
-|--- |--- |
-|**Open source**|**Google Cloud managed service**|
-|warehouse|bigquery|
-|Hadoop, Spark, Hive|Dataproc|
-|Beam (stream/Batch)|Dataflow|
-|Airflow|Cloud Composer|
-|Kafka, RabbitMQ|Pub/Sub|
-|Cassandra,HBase|Cloud Bigtable|
-|MongoDB|Cloud Firestore(Mobile App) or Cloud DataStore|
-|Redis| Cloud MemoryStore|
+|||||
+|--- |--- |--- |--- |
+|**Open source**|**Google Cloud managed service**|**Purpose**|**comments**|
+|HDFS|Cloud Storage| store ||
+|Kafka, RabbitMQ|Pub/Sub| ingest ||
+|Lambda|Cloud Function | process ||
+|Hadoop, Spark, Hive|Dataproc| process ||
+|Beam (stream/Batch)|Dataflow| process ||
+|Data Warehouse|bigquery| store & analyse ||
+|Cassandra,HBase|Cloud Bigtable| store & analyse ||
+|MongoDB|Cloud Firestore(Mobile App) or Cloud DataStore| store & retrieve ||
+|Redis| Cloud MemoryStore| store & retrieve ||
+|Airflow|Cloud Composer| orchestrate ||
+
 
 
 ![image](https://github.com/vijayanandrp/vijayanandrp/assets/3804538/aad234a0-9add-47bb-b41d-3560a73ce2ca)
