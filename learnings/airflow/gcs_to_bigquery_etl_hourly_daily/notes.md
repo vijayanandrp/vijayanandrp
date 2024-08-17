@@ -13,6 +13,12 @@ Here’s is the quick abstract of the code implemented in this folder.
 
 --- 
 
+Diagram:
+<img width="502" alt="image" src="https://github.com/user-attachments/assets/da02ac4a-553c-4efb-9010-bfcc85ec8fc0">
+
+<img width="665" alt="image" src="https://github.com/user-attachments/assets/468f89fe-3f74-4dd3-809b-9543b61ef8bf">
+
+
 This version provides a clear and concise summary of your achievements.
 
 # Setting up Slack in Composer (Airflow)
