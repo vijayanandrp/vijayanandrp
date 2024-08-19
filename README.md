@@ -1,16 +1,16 @@
-### Hi there, this is Vijay! 👋
+### Hi there, this is Vijhay! 👋
 
 ![](https://komarev.com/ghpvc/?username=vijayanandrp&style=flat-square)
 
-- 🔭 I’m Vijay Anand Pandian
+- 🔭 I’m Vijhay Anandd
 
 - 👯 I've contributed on [Stackoverflow](https://stackoverflow.com/users/2868367/vijay-anand-pandian), [Gist](https://gist.github.com/vijayanandrp)
 
-- 💰 Accreditation : [Vijay Anand Pandian](https://www.credly.com/users/vijayanandrp)
+- 💰 Accreditation : [Vijhay Anandd](https://www.credly.com/users/vijayanandrp)
 
 - 🐦 I'm on twitter [@vijayanandrp](https://twitter.com/vijayanandrp)
 
-- 🤔 I'm on LinkedIn [Vijay Anand Pandian](https://www.linkedin.com/in/vijayanandrp/)
+- 🤔 I'm on LinkedIn [Vijhay Anandd](https://www.linkedin.com/in/vijayanandrp/)
 
 - 😄 Pronouns: He/Him/His
   
