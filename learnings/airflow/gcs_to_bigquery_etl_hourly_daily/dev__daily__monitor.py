@@ -2,9 +2,9 @@ import os
 from datetime import timedelta, datetime
 from airflow import DAG
 from airflow.utils.dates import days_ago
+from airflow.operators.dummy import DummyOperator
 from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.operators.python import PythonOperator, BranchPythonOperator
-from airflow.operators.dummy import DummyOperator
 from airflow.providers.google.cloud.operators.gcs import GCSListObjectsOperator
 from airflow.providers.google.cloud.hooks.bigquery import BigQueryHook
 from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobOperator
@@ -13,25 +13,27 @@ from airflow.providers.slack.operators.slack import SlackAPIPostOperator
 # -----------------------------------------------------------------------------
 # Parameters
 # -----------------------------------------------------------------------------
-
 translate_table = str.maketrans(" :-", "___")
 translate_partition = str.maketrans(":-", "  ")
 
-dag_id = f"{os.path.basename(__file__).replace('.py', '')}"
-slack_channel_id = "XXXXXX"  # team-alert-channel
-slack_conn_id = "slack_api_default"  # Created via Google Cloud Composer Airflow UI
 environment = "dev"
 data_frequency = "daily"
 gcs_file_format = "AVRO"
 gcs_success_file = "_SUCCESS"
 project_name = "PROJECT_NAME"
-team_name = "TEAM_NAME"
+team_name = "PROJECT_NAME"
 location = "europe-west2"
+
 project_id = "PROJECT_ID"
 dataset_id = "DATASET_ID"
+gcs_bucket = "poc-conviva-ssd-logs"
 feed_name = "FEED_NAME"
-gcs_bucket = "BUCKET-hourly"
 
+slack_channel_id = "CXXXXXX"  # develop
+slack_conn_id = "slack_api_default"  # Created via Google Cloud Composer Airflow UI
+slack_username = "Demo_ETL"
+
+dag_id = f"{os.path.basename(__file__).replace('.py', '')}"
 gcs_prefix = f"{feed_name}/"
 table_slug = feed_name.translate(translate_table)
 raw_table_id = f"raw__{table_slug}__{data_frequency}"
@@ -40,42 +42,44 @@ pipeline_dag_id = (
     f"{environment}__{project_name}__{table_slug}__{data_frequency}__pipeline"
 )
 
-get_raw_partition_query = f"""
-    SELECT
+# SQL Query to get the bigquery table partitions
+get_raw_table_partition_query = f"""
+SELECT
     partition_id
-    FROM
+FROM
     `{project_id}.{dataset_id}.INFORMATION_SCHEMA.PARTITIONS`
-    WHERE
+WHERE
     table_name = '{raw_table_id}';"""
 
+# SQL Query for identifying the partition gap
 identify_missing_partition_query = f"""
-WITH raw AS (
-    SELECT
-        partition_id
-    FROM
-        `{project_id}.{dataset_id}.INFORMATION_SCHEMA.PARTITIONS`
-    WHERE
-        table_name = '{raw_table_id}'
-        AND partition_id <> '__NULL__'
-),
-expected AS (
-    SELECT
-        FORMAT_DATE("%Y%m%d", date) AS partition_id
-    FROM
-        UNNEST(
-            GENERATE_DATE_ARRAY(
-                '2024-01-01',
-                DATE_SUB(CURRENT_DATE(), INTERVAL 2 DAY), -- TIMEDELTA
-                INTERVAL 1 DAY
-            )
-        ) AS date
-)
+WITH 
+    raw AS (
+        SELECT
+            partition_id
+        FROM
+            `{project_id}.{dataset_id}.INFORMATION_SCHEMA.PARTITIONS`
+        WHERE
+            table_name = '{raw_table_id}'
+            AND partition_id <> '__NULL__'
+    ),
+    expected AS (
+        SELECT
+            FORMAT_DATE("%Y%m%d", date) AS partition_id
+        FROM
+            UNNEST(
+                GENERATE_DATE_ARRAY(
+                    '2024-01-01',
+                    DATE_SUB(CURRENT_DATE(), INTERVAL 2 DAY), -- TIMEDELTA
+                    INTERVAL 1 DAY
+                )
+            ) AS date
+    )
 SELECT
     expected.partition_id
 FROM
-    expected
-    LEFT JOIN raw ON raw.partition_id = expected.partition_id
-where
+    expected LEFT JOIN raw ON raw.partition_id = expected.partition_id
+WHERE
     raw.partition_id IS NULL
     AND expected.partition_id >= (
         SELECT
@@ -98,7 +102,6 @@ default_args = {
     "retry_delay": timedelta(hours=1),
     "execution_timeout": timedelta(minutes=30),
     "depends_on_past": False,
-    "slack_conn_id": "slack_api_default",
 }
 
 dag = DAG(
@@ -118,7 +121,7 @@ dag = DAG(
 
 
 def get_gcs_partition(**kwargs):
-    """Create GCS Bucket/Partition list per feed name."""
+    """fetches the gcs partition list from `scan_gcs_bucket` task and filter the successfully uploaded partition folders."""
     ti = kwargs["ti"]
     folders = [
         os.path.dirname(object)
@@ -131,7 +134,8 @@ def get_gcs_partition(**kwargs):
 
 
 def check_partition_exists(job_id, **kwargs):
-    print(f"\tPartition Query: {job_id=}")
+    """compare the gcs parition and bigquery table partition to get the latest/new partition list."""
+    print(f"\t BigQuery Job ID: {job_id}")
 
     ti = kwargs["ti"]
     hook = BigQueryHook()
@@ -162,6 +166,7 @@ def check_partition_exists(job_id, **kwargs):
 
 
 def trigger_dags(**kwargs):
+    """triggers the ETL pipeline DAG with partition_key"""
     ti = kwargs["ti"]
     partition_keys = ti.xcom_pull(
         task_ids="check_new_partition", key="new_storage_partition"
@@ -177,7 +182,8 @@ def trigger_dags(**kwargs):
         ).execute(context=kwargs)
 
 
-def identify_data_gap(**kwargs):
+def identify_partition_gap(**kwargs):
+    """Checks for the partition gap and notifies in slack channel if any gap is found."""
     ti = kwargs["ti"]
     print(identify_missing_partition_query)
     hook = BigQueryHook(location=location, use_legacy_sql=False, labels=labels)
@@ -216,7 +222,7 @@ get_bq_partition_task = BigQueryInsertJobOperator(
     task_id="get_bq_partition",
     configuration={
         "query": {
-            "query": get_raw_partition_query,
+            "query": get_raw_table_partition_query,
             "useLegacySql": False,
         }
     },
@@ -240,9 +246,9 @@ trigger_dag_task_loop = PythonOperator(
     dag=dag,
 )
 
-identify_data_gap_task = BranchPythonOperator(
-    task_id="identify_data_gap",
-    python_callable=identify_data_gap,
+identify_partition_gap_task = BranchPythonOperator(
+    task_id="identify_partition_gap",
+    python_callable=identify_partition_gap,
     dag=dag,
 )
 
@@ -250,7 +256,7 @@ send_alert_task = SlackAPIPostOperator(
     task_id="send_alert",
     text="{{ task_instance.xcom_pull(key='slack_message') }}",
     channel=slack_channel_id,
-    username="Alert",
+    username=slack_username,
     dag=dag,
 )
 
@@ -269,6 +275,6 @@ ignore_alert_task = DummyOperator(
     >> get_bq_partition_task
     >> check_new_partition_task
     >> trigger_dag_task_loop
-    >> identify_data_gap_task
+    >> identify_partition_gap_task
     >> [send_alert_task, ignore_alert_task]
 )
