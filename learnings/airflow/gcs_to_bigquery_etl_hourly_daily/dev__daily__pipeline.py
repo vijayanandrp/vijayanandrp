@@ -20,13 +20,9 @@ from airflow.providers.slack.operators.slack import SlackAPIPostOperator
 translate_table = str.maketrans(" :-", "___")
 translate_partition = str.maketrans(":-", "  ")
 
-dag_id = f"{os.path.basename(__file__).replace('.py', '')}"
-slack_channel_id = "XXXXXX"  # team-alert-channel
-slack_conn_id = "slack_api_default"  # Created via Google Cloud Composer Airflow UI
 environment = "dev"
 data_frequency = "daily"
 gcs_file_format = "AVRO"
-gcs_success_file = "_SUCCESS"
 project_name = "PROJECT_NAME"
 team_name = "TEAM_NAME"
 location = "europe-west2"
@@ -34,30 +30,32 @@ project_id = "PROJECT_ID"
 dataset_id = "DATASET_ID"
 feed_name = "FEED_NAME"
 gcs_bucket = "BUCKET"
+
+slack_channel_id = "CXXXXXXX"  # develop
+slack_conn_id = "slack_api_default"  # Created via Google Cloud Composer Airflow UI
+slack_username = "Demo_ETL"
+
+dag_id = f"{os.path.basename(__file__).replace('.py', '')}"
 labels = {"env": environment, "project": project_name, "team": team_name}
 
-delete_partition_from_table_query = """
-DELETE `{project_id}.{dataset_id}.{raw_table_id}` 
-WHERE TIMESTAMP_TRUNC(partition_key, DAY) = TIMESTAMP(DATE "{partition_key}");
-"""
+delete_partition_from_table_query = """DELETE `{project_id}.{dataset_id}.{raw_table_id}` WHERE partition_key = DATE_TRUNC("{partition_key}", DAY);"""
 
 insert_into_table_query = """
 INSERT INTO
     `{project_id}.{dataset_id}.{raw_table_id}`  (
-        view_id,
-        view_name,
-        file_id,
-        file_name,
-        dt,
-        partition_key
+    view_id,
+    view_name,
+    file_id,
+    file_name,
+    dt,
+    partition_key
     )
 SELECT
     view_id,
     view_name,
     file_id,
     file_name,
-    dt,
-    TIMESTAMP(DATE "{partition_key}") as partition_key
+    dt, DATE_TRUNC("{partition_key}", DAY) as partition_key
 FROM
     `{temp_table_uri}`;
 """
@@ -84,13 +82,11 @@ FROM
 
 default_args = {
     "owner": f"{team_name.upper()}",
-    "depends_on_past": False,
-    "email_on_failure": False,
-    "email_on_retry": False,
     "start_date": days_ago(1),
     "retries": 0,
     "retry_delay": timedelta(hours=1),
     "execution_timeout": timedelta(minutes=30),
+    "depends_on_past": False,
 }
 
 dag = DAG(
@@ -99,6 +95,7 @@ dag = DAG(
     default_args=default_args,
     schedule_interval=None,
     catchup=False,
+    max_active_runs=1,
     render_template_as_native_obj=True,
     tags=[
         environment,
@@ -116,7 +113,7 @@ dag = DAG(
 
 
 def set_xcom_variables(**kwargs):
-    """read partition_key from params"""
+    """read partition_key from params and sets the xcom variables"""
     ti = kwargs["ti"]
     print(kwargs)
     print(f"\t{kwargs['params']}")
@@ -134,6 +131,7 @@ def set_xcom_variables(**kwargs):
     table_slug = feed_name.translate(translate_table)
     bq_parition_key = partition_key.translate(translate_partition).replace(" ", "")[:10]
     raw_table_id = f"raw__{table_slug}__{data_frequency}"
+    raw_flat_table_id = f"raw__{table_slug}__flat__{data_frequency}"
     temp_table_id = f"tmp__{table_slug}__{data_frequency}__{partition_key.translate(translate_table)}"
     temp_table_uri = f"{project_id}.{dataset_id}.{temp_table_id}"
 
@@ -141,6 +139,7 @@ def set_xcom_variables(**kwargs):
         project_id=project_id,
         dataset_id=dataset_id,
         raw_table_id=raw_table_id,
+        raw_flat_table_id=raw_flat_table_id,
         partition_key=partition_key,
         bq_parition_key=bq_parition_key,
         temp_table_uri=temp_table_uri,
@@ -148,6 +147,7 @@ def set_xcom_variables(**kwargs):
     )
 
     ti.xcom_push(key="raw_table_id", value=raw_table_id)
+    ti.xcom_push(key="raw_flat_table_id", value=raw_flat_table_id)
     ti.xcom_push(key="temp_table_id", value=temp_table_id)
     ti.xcom_push(key="partition_key", value=partition_key)
     ti.xcom_push(key="gcs_prefix", value=gcs_prefix)
@@ -313,7 +313,7 @@ send_alert_task = SlackAPIPostOperator(
     task_id="send_alert",
     text="{{ task_instance.xcom_pull(key='slack_message') }}",
     channel=slack_channel_id,
-    username="Alert",
+    username=slack_username,
     trigger_rule="one_failed",
     dag=dag,
 )
