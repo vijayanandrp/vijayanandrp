@@ -28,7 +28,7 @@ location = "europe-west2"
 project_id = "PROJECT_ID"
 dataset_id = "DATASET_ID"
 feed_name = "FEED_NAME"
-gcs_bucket = "BUCKET"
+gcs_bucket = "BUCKET_NAME"
 
 slack_channel_id = "CXXXXXXX"  # develop
 slack_conn_id = "slack_api_default"  # Created via Google Cloud Composer Airflow UI

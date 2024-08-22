@@ -26,7 +26,7 @@ location = "europe-west2"
 
 project_id = "PROJECT_ID"
 dataset_id = "DATASET_ID"
-gcs_bucket = "poc-conviva-ssd-logs"
+gcs_bucket = "BUCKET_NAME"
 feed_name = "FEED_NAME"
 
 slack_channel_id = "CXXXXXX"  # develop
