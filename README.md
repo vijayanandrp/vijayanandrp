@@ -65,3 +65,13 @@
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=vijayanandrp&show_icons=true&locale=en" alt="vijayanandrp" /></p>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=vijayanandrp&label=Profile%20views&color=0e75b6&style=flat" alt="vijayanandrp" /> </p> -->
+
+
+👋 Hi Team!
+I’m Vijayanand Pandian, your new Senior Data Engineer, and I’m really excited to be joining this fantastic team! I bring over 10 years of experience in designing scalable data products, real-time analytics solutions, and building cloud-native pipelines across platforms like GCP, AWS, and Azure. My expertise lies in technologies such as Kafka, BigQuery, Airflow, Python, and Terraform — and I’m passionate about turning data into impactful business outcomes.
+
+In my previous role, I helped reduce operational latency, automated monitoring systems, and developed frameworks that cut onboarding time by 90%, driving efficiency and reliability across the board. I love innovating, solving real-world data challenges, and continuously learning to stay ahead of the curve — in fact, I recently built my own website to explore full-stack development!
+
+Outside of work, I’m an avid cricket player, I enjoy driving and walking through natural landscapes, and I’m always up for exploring new technologies. I’m also active in my local community, helping organize events and bring people together — something I find really fulfilling.
+
+Looking forward to collaborating, learning, and growing with all of you. Let’s build something amazing together! 🚀
