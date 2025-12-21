@@ -11,10 +11,6 @@
 * 🌍  I'm based in London, United Kingdom
 * 🖥️  See my portfolio at [https://vijaynandrp.com](https://vijayanandrp.com)
   
-![pexels-ákos-szabó-440731](https://github.com/vijayanandrp/vijayanandrp/assets/3804538/8c6d2b2d-1cb9-498a-877b-9d2f5a08af73)
-
-
-
 <!--
 <a href="https://github.com/vijayanandrp/github-readme-stats">  
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=vijayanandrp&theme=dark&&layout=compact" />
