@@ -42,10 +42,6 @@
 
 <p align="left"> <a href="https://www.github.com/vijayanandrp" target="_blank" rel="noreferrer">   <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" /></a> <a href="https://www.linkedin.com/in/vijayanandrp" target="_blank" rel="noreferrer">  <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" width="32" height="32" /></a> <a href="https://www.twitter.com/vijayanandrp" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/twitter.svg" width="32" height="32" /></a></p>
 
-### Badges
-
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=vijayanandrp" alt="vijayanandrp" /></a> </p>
-
 
 <!-- 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=vijayanandrp&" alt="vijayanandrp" /></p>
